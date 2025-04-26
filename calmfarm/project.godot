@@ -20,8 +20,7 @@ window/size/viewport_width=640
 window/size/viewport_height=360
 window/size/window_width_override=1280
 window/size/window_height_override=720
-window/stretch/mode="viewport"
-window/stretch/aspect="keep_height"
+window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 
 [file_customization]
@@ -73,6 +72,7 @@ hit={
 
 2d_render/layer_1="Ground"
 2d_physics/layer_1="Ground"
+2d_navigation/layer_1="Chicken Navigation"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Interactable"
 2d_physics/layer_4="Tool"
@@ -86,3 +86,4 @@ renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/decals/filter=2
 textures/light_projectors/filter=2
+2d/snap/snap_2d_transforms_to_pixel=true
