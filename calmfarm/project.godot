@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ToolManager="*res://Scripts/globals/tool_manager.gd"
+InventoryManager="*res://Scripts/globals/inventory_manager.gd"
 
 [display]
 

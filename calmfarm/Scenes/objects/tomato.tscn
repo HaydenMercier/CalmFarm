@@ -9,7 +9,7 @@ atlas = ExtResource("1_8f8sr")
 [sub_resource type="CircleShape2D" id="CircleShape2D_e02wp"]
 radius = 3.0
 
-[node name="Egg" type="Sprite2D"]
+[node name="Tomato" type="Sprite2D"]
 y_sort_enabled = true
 texture = SubResource("AtlasTexture_n8n4u")
 hframes = 6
@@ -17,7 +17,7 @@ vframes = 2
 frame = 11
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_plm77")]
-collectable_name = "milk"
+collectable_name = "tomato"
 
 [node name="Area2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_e02wp")
