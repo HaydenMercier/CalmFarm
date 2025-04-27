@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://mpliai4mlnj6"]
+
+[ext_resource type="Texture2D" uid="uid://cn3e02x1oxdg" path="res://Assets/objects/egg_item.png" id="1_1uaxd"]
+[ext_resource type="PackedScene" uid="uid://c31ppunnrsup4" path="res://Scenes/components/collectable_component.tscn" id="2_acrxe"]
+
+[node name="Egg" type="Sprite2D"]
+texture = ExtResource("1_1uaxd")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_acrxe")]
