@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://m6y38swtl61m"]
+
+[ext_resource type="Texture2D" uid="uid://1gpbptlqgj5i" path="res://Assets/objects/basic_plants.png" id="1_x0hs2"]
+[ext_resource type="PackedScene" uid="uid://c31ppunnrsup4" path="res://Scenes/components/collectable_component.tscn" id="2_rb1xn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il0ho"]
+atlas = ExtResource("1_x0hs2")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e02wp"]
+radius = 3.0
+
+[node name="Egg" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_il0ho")
+hframes = 6
+vframes = 2
+frame = 5
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_rb1xn")]
+collectable_name = "milk"
+
+[node name="Area2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_e02wp")

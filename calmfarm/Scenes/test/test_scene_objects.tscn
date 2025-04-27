@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=4 uid="uid://cciw0vx5cotaf"]
+[gd_scene load_steps=12 format=4 uid="uid://cciw0vx5cotaf"]
 
 [ext_resource type="TileSet" uid="uid://5wg17krb2t55" path="res://Tilesets/game_tile_set.tres" id="1_y15f6"]
 [ext_resource type="Texture2D" uid="uid://doayevsqfx8wo" path="res://Assets/tilesets/grass.png" id="2_a6bl3"]
 [ext_resource type="PackedScene" uid="uid://dl20usxc43b7h" path="res://Scenes/characters/player/player.tscn" id="3_tqtpv"]
+[ext_resource type="PackedScene" uid="uid://mpliai4mlnj6" path="res://Scenes/objects/egg.tscn" id="4_ng5p1"]
+[ext_resource type="PackedScene" uid="uid://b25hmi2w3s6xa" path="res://Scenes/objects/rocks/stone.tscn" id="5_b52ep"]
+[ext_resource type="PackedScene" uid="uid://dkb46afs3a6eh" path="res://Scenes/objects/tree/log.tscn" id="6_npeg3"]
+[ext_resource type="PackedScene" uid="uid://g18lcbte28m0" path="res://Scenes/objects/tomato.tscn" id="7_yfe16"]
+[ext_resource type="PackedScene" uid="uid://dgr7a57vpl8i4" path="res://Scenes/objects/milk.tscn" id="8_njn5m"]
+[ext_resource type="PackedScene" uid="uid://m6y38swtl61m" path="res://Scenes/objects/corn.tscn" id="9_kj2ng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7sb31"]
 texture = ExtResource("2_a6bl3")
@@ -289,3 +295,21 @@ tile_set = ExtResource("1_y15f6")
 position = Vector2(208, 187)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Egg" parent="." instance=ExtResource("4_ng5p1")]
+position = Vector2(252, 154)
+
+[node name="Stone" parent="." instance=ExtResource("5_b52ep")]
+position = Vector2(230, 160)
+
+[node name="Log" parent="." instance=ExtResource("6_npeg3")]
+position = Vector2(247, 175)
+
+[node name="Egg2" parent="." instance=ExtResource("7_yfe16")]
+position = Vector2(272, 140)
+
+[node name="Egg3" parent="." instance=ExtResource("8_njn5m")]
+position = Vector2(312, 158)
+
+[node name="Egg4" parent="." instance=ExtResource("9_kj2ng")]
+position = Vector2(283, 150)
