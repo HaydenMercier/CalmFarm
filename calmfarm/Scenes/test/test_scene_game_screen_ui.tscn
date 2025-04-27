@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://c1lwpwfjxm4w7"]
+[gd_scene load_steps=8 format=4 uid="uid://c1lwpwfjxm4w7"]
 
 [ext_resource type="TileSet" uid="uid://5wg17krb2t55" path="res://Tilesets/game_tile_set.tres" id="1_fxfca"]
 [ext_resource type="Texture2D" uid="uid://doayevsqfx8wo" path="res://Assets/tilesets/grass.png" id="2_hckvs"]
 [ext_resource type="PackedScene" uid="uid://dl20usxc43b7h" path="res://Scenes/characters/player/player.tscn" id="3_qwka6"]
 [ext_resource type="PackedScene" uid="uid://cqnvw8w5x0cdp" path="res://Scenes/ui/game_screen.tscn" id="4_x1x74"]
+[ext_resource type="PackedScene" uid="uid://bcdpijocyvunv" path="res://Scenes/components/day_night_cycle_component.tscn" id="5_1jugi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7sb31"]
 texture = ExtResource("2_hckvs")
@@ -282,3 +283,5 @@ tile_set = SubResource("TileSet_rffr0")
 position = Vector2(280, 154)
 
 [node name="GameScreen" parent="." instance=ExtResource("4_x1x74")]
+
+[node name="DayNightCycleComponent" parent="." instance=ExtResource("5_1jugi")]

@@ -41,8 +41,6 @@ func _on_enter() -> void:
 	
 	hit_component_collision_shape.disabled = false
 
-
-
 func _on_exit() -> void:
 	animated_sprite_2d.stop()
 	hit_component_collision_shape.disabled = true
