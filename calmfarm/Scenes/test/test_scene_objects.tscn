@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cciw0vx5cotaf"]
+[gd_scene load_steps=14 format=4 uid="uid://cciw0vx5cotaf"]
 
 [ext_resource type="TileSet" uid="uid://5wg17krb2t55" path="res://Tilesets/game_tile_set.tres" id="1_y15f6"]
 [ext_resource type="Texture2D" uid="uid://doayevsqfx8wo" path="res://Assets/tilesets/grass.png" id="2_a6bl3"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://g18lcbte28m0" path="res://Scenes/objects/tomato.tscn" id="7_yfe16"]
 [ext_resource type="PackedScene" uid="uid://dgr7a57vpl8i4" path="res://Scenes/objects/milk.tscn" id="8_njn5m"]
 [ext_resource type="PackedScene" uid="uid://m6y38swtl61m" path="res://Scenes/objects/corn.tscn" id="9_kj2ng"]
+[ext_resource type="PackedScene" uid="uid://simyrr6jkdef" path="res://Scenes/objects/plants/corn.tscn" id="10_6ydq5"]
+[ext_resource type="PackedScene" uid="uid://cwkmfm2ckay7k" path="res://Scenes/objects/plants/tomato.tscn" id="11_beh8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7sb31"]
 texture = ExtResource("2_a6bl3")
@@ -272,6 +274,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_7sb31")
 
 [node name="TestSceneTilemap" type="Node2D"]
+y_sort_enabled = true
 
 [node name="GameTilemap" type="Node2D" parent="."]
 
@@ -327,3 +330,9 @@ position = Vector2(325, 209)
 
 [node name="Egg8" parent="Pickups" instance=ExtResource("9_kj2ng")]
 position = Vector2(299, 171)
+
+[node name="Corn" parent="." instance=ExtResource("10_6ydq5")]
+position = Vector2(217, 222)
+
+[node name="Tomato" parent="." instance=ExtResource("11_beh8u")]
+position = Vector2(244, 223)

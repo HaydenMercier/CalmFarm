@@ -23,23 +23,27 @@ radius = 5.0
 size = Vector2(14, 20)
 
 [node name="Large Tree" type="Sprite2D"]
+y_sort_enabled = true
 material = SubResource("ShaderMaterial_redda")
-position = Vector2(0, -11)
+position = Vector2(0, -4)
 texture = SubResource("AtlasTexture_n1hdu")
+offset = Vector2(0, -7)
 script = ExtResource("2_yt17p")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 10)
+position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_s4csl")
 
 [node name="HurtComponent" parent="." instance=ExtResource("2_wgrud")]
+position = Vector2(0, -2)
 tool = 1
 
 [node name="HurtComponentCollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
-position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_dmgxb")
 
 [node name="DamageComponent" parent="." instance=ExtResource("3_v5i67")]
+position = Vector2(0, 6)
 max_damage = 5
