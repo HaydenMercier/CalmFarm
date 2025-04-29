@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://gxbdfipgvlbn"]
+
+[ext_resource type="Texture2D" uid="uid://1gpbptlqgj5i" path="res://Assets/objects/basic_plants.png" id="1_7qhve"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il0ho"]
+atlas = ExtResource("1_7qhve")
+
+[node name="Corn" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_il0ho")
+hframes = 6
+vframes = 2
+frame = 5

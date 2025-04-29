@@ -1,6 +1,6 @@
 extends Node2D
 
-# var balloon_scene = preload("res://dialogue/game_dialogue_balloon.tscn")
+var balloon_scene = preload("res://Dialogue/game_dialogue_balloon.tscn")
 
 @onready var interactable_component: InteractableComponent = $InteractableComponent
 @onready var interactable_label_component: Control = $InteractableLabelComponent
@@ -13,7 +13,7 @@ func _ready() -> void:
 	interactable_component.interactable_deactivated.connect(on_interactable_deactivated)
 	interactable_label_component.hide()
 	
-#	GameDialogueManager.give_crop_seeds.connect(on_give_crop_seeds)
+	GameDialogueManager.give_crop_seeds.connect(on_give_crop_seeds)
 
 
 func on_interactable_activated() -> void:
@@ -30,9 +30,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if in_range:
 		if event.is_action_pressed("show_dialogue"):
 			pass
-			# var balloon: BaseGameDialogueBalloon = balloon_scene.instantiate()
-			# get_tree().root.add_child(balloon)
-			# balloon.start(load("res://dialogue/conversations/guide.dialogue"), "start")
+			var balloon: BaseGameDialogueBalloon = balloon_scene.instantiate()
+			get_tree().root.add_child(balloon)
+			balloon.start(load("res://dialogue/conversations/guide.dialogue"), "start")
 
 
 func on_give_crop_seeds() -> void:
