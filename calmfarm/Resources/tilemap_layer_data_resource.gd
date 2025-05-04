@@ -3,7 +3,7 @@ extends NodeDataResource
 
 @export var tilemap_layer_used_cells: Array[Vector2i] 
 @export var terrain_set: int = 0
-@export var terrain: int = 1
+@export var terrain: int = 3
 
 
 func _save_data(node: Node2D) -> void:

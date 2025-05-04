@@ -4,7 +4,7 @@ extends Node
 @export var grass_tilemap_layer: TileMapLayer
 @export var tilled_soil_tilemap_layer: TileMapLayer
 @export var terrain_set: int = 0
-@export var terrain: int = 3
+@export var terrain: int = 1
 
 var player: Player
 var mouse_position: Vector2
@@ -18,7 +18,7 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("remove_dirt"):
 		if ToolManager.selected_tool == DataTypes.Tools.TillGround:
 			get_cell_under_mouse()

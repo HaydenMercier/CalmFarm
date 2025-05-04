@@ -32,7 +32,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			pass
 			var balloon: BaseGameDialogueBalloon = balloon_scene.instantiate()
 			get_tree().root.add_child(balloon)
-			balloon.start(load("res://dialogue/conversations/guide.dialogue"), "start")
+			balloon.start(load("res://Dialogue/conversations/guide.dialogue"), "start")
 
 
 func on_give_crop_seeds() -> void:

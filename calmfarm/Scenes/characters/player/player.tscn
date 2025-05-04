@@ -410,6 +410,7 @@ script = ExtResource("1_f2k18")
 sprite_frames = SubResource("SpriteFrames_vtcje")
 animation = &"idle_front"
 autoplay = "idle_front"
+frame_progress = 0.253486
 offset = Vector2(0, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -429,6 +430,7 @@ player = NodePath("../..")
 script = ExtResource("5_vaf75")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+speed = 100
 
 [node name="Chopping" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_collision_shape")]
 script = ExtResource("7_muspt")
@@ -451,5 +453,6 @@ hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisi
 
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
 position = Vector2(0, 3)
+scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_mf64q")
 debug_color = Color(0.929278, 3.14775e-05, 0.661366, 0.42)

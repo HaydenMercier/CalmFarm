@@ -16,12 +16,14 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+mouse_filter = 0
 theme = ExtResource("1_qdhtj")
 
 [node name="ToolPanel" parent="MarginContainer" instance=ExtResource("2_q3ugl")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+mouse_filter = 2
 
 [node name="InventoryPanel" parent="MarginContainer" instance=ExtResource("3_py05w")]
 layout_mode = 2

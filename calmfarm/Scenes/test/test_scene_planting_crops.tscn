@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dgg0dyk8v37y4"]
+[gd_scene load_steps=21 format=4 uid="uid://dgg0dyk8v37y4"]
 
 [ext_resource type="TileSet" uid="uid://5wg17krb2t55" path="res://Tilesets/game_tile_set.tres" id="1_elq3s"]
 [ext_resource type="Texture2D" uid="uid://doayevsqfx8wo" path="res://Assets/tilesets/grass.png" id="2_ngh6k"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bynstr88lxquc" path="res://Scenes/components/save_level_data_component.tscn" id="11_4gu4y"]
 [ext_resource type="Script" path="res://Scenes/components/save_level_data_component.gd" id="12_qpsbq"]
 [ext_resource type="PackedScene" uid="uid://b3imhcwwusvef" path="res://Scenes/components/test_scene_save_data_manager_component.tscn" id="13_147tb"]
+[ext_resource type="PackedScene" uid="uid://cu7bppwsc00jw" path="res://Scenes/characters/guide/guide.tscn" id="18_d23e8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7sb31"]
 texture = ExtResource("2_ngh6k")
@@ -304,7 +305,6 @@ save_data_resource = ExtResource("5_aujto")
 script = ExtResource("7_1rtau")
 grass_tilemap_layer = NodePath("../GameTilemap/Grass")
 tilled_soil_tilemap_layer = NodePath("../GameTilemap/TilledDirt")
-terrain = 1
 
 [node name="CropsCursorComponent" parent="." node_paths=PackedStringArray("tilled_soil_tilemap_layer") instance=ExtResource("6_o6868")]
 script = ExtResource("7_3m0ge")
@@ -325,3 +325,6 @@ script = ExtResource("12_qpsbq")
 [node name="Corn" parent="." instance=ExtResource("6_ds8q0")]
 
 [node name="Tomato" parent="." instance=ExtResource("7_bg7ak")]
+
+[node name="Guide" parent="." instance=ExtResource("18_d23e8")]
+position = Vector2(185, 168)

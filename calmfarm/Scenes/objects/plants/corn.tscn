@@ -37,6 +37,7 @@ position = Vector2(-1, 3)
 shape = SubResource("RectangleShape2D_5amai")
 
 [node name="GrowthCycleComponent" parent="." instance=ExtResource("5_goc80")]
+days_until_harvest = 5
 
 [node name="SaveDataComponent" parent="." instance=ExtResource("7_36oa7")]
 save_data_resource = ExtResource("8_bjmcr")

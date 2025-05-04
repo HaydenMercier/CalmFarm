@@ -18,7 +18,7 @@ func _ready() -> void:
 	await get_tree().process_frame
 	player = get_tree().get_first_node_in_group("player")
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("remove_dirt"):
 		if ToolManager.selected_tool == DataTypes.Tools.TillGround:
 			get_cell_under_mouse()
@@ -37,7 +37,7 @@ func get_cell_under_mouse() -> void:
 	distance = player.global_position.distance_to(local_cell_position)
 
 func add_crop() -> void:
-	if distance < 20.0 and is_tilled_soil(cell_position):
+	if distance < 20.0:
 		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn:
 			var corn_instance = corn_plant_scene.instantiate() as Node2D
 			corn_instance.global_position = local_cell_position
@@ -56,6 +56,3 @@ func remove_crop() -> void:
 		for node: Node2D in crop_nodes:
 			if node.global_position == local_cell_position:
 				node.queue_free()
-
-func is_tilled_soil(cell_pos: Vector2i) -> bool:
-	return tilled_soil_tilemap_layer.get_cell_source_id(cell_pos) != -1
