@@ -5,7 +5,7 @@ Marlow: Welcome to your new farm.
 Marlow: As you can see, the cows and chickens are hungry.
 Marlow: You need to grow some crops to feed them.
 Marlow: Here are some seeds to grow some crops.
-- Take Crop seeds
+- Take crop seeds
 	Teemo: Yeah I can grow crops.
 	do GameDialogueManager.action_give_crop_seeds()
 - No, I don't want them

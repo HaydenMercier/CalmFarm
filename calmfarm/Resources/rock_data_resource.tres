@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RockDataResource" load_steps=2 format=3 uid="uid://n4fkq6c10via"]
+
+[ext_resource type="Script" path="res://Resources/rock_data_resource.gd" id="1_ugg4o"]
+
+[resource]
+script = ExtResource("1_ugg4o")
+is_mined = false
+global_position = Vector2(0, 0)
+node_path = NodePath("..")
+parent_node_path = NodePath("")

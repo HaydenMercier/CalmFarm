@@ -29,6 +29,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameDialogueManager="*res://Scripts/globals/game_dialogue_manager.gd"
 GameManager="*res://Scripts/globals/game_manager.gd"
 SceneManager="*res://Scripts/globals/scene_manager.gd"
+AudioManager="*res://audio/AudioManager.gd"
 
 [display]
 
@@ -123,7 +124,7 @@ game_menu={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/conversations/guide.dialogue", "res://Dialogue/conversations/chest.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/conversations/guide.dialogue", "res://Dialogue/conversations/chest.dialogue", "res://Dialogue/conversations/settings.dialogue")
 
 [layer_names]
 

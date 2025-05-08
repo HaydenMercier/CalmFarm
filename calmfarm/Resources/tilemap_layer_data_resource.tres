@@ -9,4 +9,4 @@ terrain_set = 0
 terrain = 1
 global_position = Vector2(0, 0)
 node_path = NodePath("GameTilemap/TilledDirt")
-parent_node_path = NodePath("")
+parent_node_path = NodePath("../../../CropFields")

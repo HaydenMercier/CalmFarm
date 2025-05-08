@@ -1,0 +1,27 @@
+~ start
+Settings: [[Hi|Hello|Howdy]], you can change the settings here.
+Settings: What would you like to do.
+- Change the Volume
+	Teemo: Change the volume.
+	Settings: What would you like to change it to?
+	- Normal
+		Teemo: Normal, please.
+		do GameDialogueManager.action_normal()
+	- Quiet
+		Teemo: Quiet, please.
+		do GameDialogueManager.action_quiet()
+	- Mute
+		Teemo: Mute, please.
+		do GameDialogueManager.action_mute()
+	- Exit
+		Teemo: Sorry, no thank you.
+		=> END
+- Toggle the day-night cycle
+	Teemo: Toggle the day-night cycle.
+	- On
+		Teemo: Turn it on, please.
+		do GameDialogueManager.action_on()
+	- Off
+		Teemo: Turn it off, please.
+		do GameDialogueManager.action_off()
+=> END

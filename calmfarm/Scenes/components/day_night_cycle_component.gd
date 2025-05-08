@@ -1,6 +1,13 @@
 class_name DayNightCycleComponent
 extends CanvasModulate
 
+
+func on_off():
+	self.visible = false
+
+func on_on():
+	self.visible = true
+
 @export var initial_day: int = 1:
 	set(id):
 		initial_day = id
@@ -26,8 +33,10 @@ func _ready() -> void:
 	DayAndNightCycleManager.initial_hour = initial_hour
 	DayAndNightCycleManager.initial_minute = initial_minute
 	DayAndNightCycleManager.set_initial_time()
-	
 	DayAndNightCycleManager.game_time.connect(on_game_time)
+	GameDialogueManager.on.connect(on_on)
+	GameDialogueManager.off.connect(on_off)
+
 
 func on_game_time(time: float) -> void:
 	var sample_value = 0.5 * (sin(time - PI * 0.5) + 1.0)

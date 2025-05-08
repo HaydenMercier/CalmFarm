@@ -13,7 +13,6 @@
 cursor_component_texture = ExtResource("2_knh4s")
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("1_ie3b7")]
-visible = false
 
 [node name="GameRoot" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -24,7 +23,7 @@ y_sort_enabled = true
 [node name="Level1" parent="GameRoot/LevelRoot" instance=ExtResource("3_ry0co")]
 
 [node name="Player" parent="GameRoot" instance=ExtResource("3_fdsp3")]
-position = Vector2(489, 447)
+position = Vector2(989, 541)
 
 [node name="Camera2D" type="Camera2D" parent="GameRoot/Player"]
 

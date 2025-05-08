@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=4 uid="uid://baypm8wyb7u7u"]
+[gd_scene load_steps=137 format=4 uid="uid://baypm8wyb7u7u"]
 
 [ext_resource type="TileSet" uid="uid://5wg17krb2t55" path="res://Tilesets/game_tile_set.tres" id="1_iu4gg"]
 [ext_resource type="PackedScene" uid="uid://qxrwmrgwqej4" path="res://audio/music/on_the_farm_music.tscn" id="1_q5qgy"]
@@ -21,6 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://mpliai4mlnj6" path="res://Scenes/objects/egg.tscn" id="12_1xr0j"]
 [ext_resource type="Shader" path="res://Scenes/objects/tree/shake.gdshader" id="20_wpvmw"]
 [ext_resource type="PackedScene" uid="uid://cnpfv1nu3hcd5" path="res://Scenes/objects/tree/small_tree.tscn" id="21_nnj4g"]
+[ext_resource type="PackedScene" uid="uid://dyi2jj0v7m8k3" path="res://Scenes/objects/rocks/rock.tscn" id="22_v5err"]
+[ext_resource type="Shader" path="res://Scenes/objects/rocks/shake.gdshader" id="23_47654"]
+[ext_resource type="PackedScene" uid="uid://cjmutsvx2mdo7" path="res://Scenes/characters/guide/settings.tscn" id="24_cqgt8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_6sw5v"]
 vertices = PackedVector2Array(1350, 140, 1323.02, 140, 1337.46, 106.297, 1408.64, 109.531, 1388, 172, 1404, 172, 1404, 284, 1174, 284, 1174, 172, 1350, 172, 1388, 140, 1407.52, 140)
@@ -610,6 +613,90 @@ shader = ExtResource("20_wpvmw")
 shader_parameter/shake_intensity = 0.0
 shader_parameter/shake_speed = 2.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xofae"]
+resource_local_to_scene = true
+shader = ExtResource("23_47654")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yub1g"]
+resource_local_to_scene = true
+shader = ExtResource("23_47654")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d0pcc"]
+resource_local_to_scene = true
+shader = ExtResource("23_47654")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d8wrj"]
+resource_local_to_scene = true
+shader = ExtResource("23_47654")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xekli"]
+resource_local_to_scene = true
+shader = ExtResource("23_47654")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1jto1"]
+resource_local_to_scene = true
+shader = ExtResource("23_47654")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bre4e"]
+resource_local_to_scene = true
+shader = ExtResource("23_47654")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u2shn"]
+resource_local_to_scene = true
+shader = ExtResource("23_47654")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2xd4j"]
+resource_local_to_scene = true
+shader = ExtResource("23_47654")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7r15q"]
+resource_local_to_scene = true
+shader = ExtResource("23_47654")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h7ok2"]
+resource_local_to_scene = true
+shader = ExtResource("23_47654")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cjnje"]
+resource_local_to_scene = true
+shader = ExtResource("23_47654")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3okrs"]
+resource_local_to_scene = true
+shader = ExtResource("23_47654")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sboc1"]
+resource_local_to_scene = true
+shader = ExtResource("23_47654")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 2.0
+
 [node name="Level1" type="Node2D"]
 y_sort_enabled = true
 
@@ -673,7 +760,7 @@ tile_set = ExtResource("1_iu4gg")
 y_sort_enabled = true
 
 [node name="Guide" parent="." instance=ExtResource("8_rsp8n")]
-position = Vector2(487, 426)
+position = Vector2(511, 417)
 
 [node name="Animals" type="Node" parent="."]
 
@@ -684,9 +771,6 @@ show_behind_parent = true
 top_level = true
 position = Vector2(-817, 394)
 navigation_polygon = SubResource("NavigationPolygon_6sw5v")
-
-[node name="Chicken" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
-position = Vector2(552, 638)
 
 [node name="Chicken2" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
 position = Vector2(373, 640)
@@ -700,26 +784,17 @@ position = Vector2(452, 586)
 [node name="Chicken5" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
 position = Vector2(495, 663)
 
-[node name="Chicken6" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
-position = Vector2(450, 621)
-
 [node name="Chicken7" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
 position = Vector2(437, 660)
 
 [node name="Chicken8" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
 position = Vector2(371, 580)
 
-[node name="Chicken9" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
-position = Vector2(543, 603)
-
 [node name="Chicken10" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
 position = Vector2(508, 574)
 
 [node name="Chicken11" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
 position = Vector2(485, 620)
-
-[node name="Chicken12" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
-position = Vector2(416, 612)
 
 [node name="Chicken13" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
 position = Vector2(371, 675)
@@ -730,20 +805,8 @@ position = Vector2(564, 579)
 [node name="Chicken15" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
 position = Vector2(572, 636)
 
-[node name="Chicken16" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
-position = Vector2(393, 638)
-
-[node name="Chicken17" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
-position = Vector2(577, 679)
-
-[node name="Chicken18" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
-position = Vector2(472, 584)
-
 [node name="Chicken19" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
 position = Vector2(515, 661)
-
-[node name="Chicken20" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
-position = Vector2(470, 619)
 
 [node name="Chicken21" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
 position = Vector2(457, 658)
@@ -754,9 +817,6 @@ position = Vector2(391, 578)
 [node name="Chicken23" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
 position = Vector2(563, 601)
 
-[node name="Chicken24" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
-position = Vector2(528, 572)
-
 [node name="Chicken25" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
 position = Vector2(505, 618)
 
@@ -765,9 +825,6 @@ position = Vector2(436, 610)
 
 [node name="Chicken27" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
 position = Vector2(391, 673)
-
-[node name="Chicken28" parent="Animals/Chickens" instance=ExtResource("3_eecw3")]
-position = Vector2(584, 577)
 
 [node name="Chickens2" type="Node" parent="Animals"]
 
@@ -923,6 +980,7 @@ reward_output_radius = 10
 output_reward_scenes = Array[PackedScene]([ExtResource("12_1xr0j")])
 
 [node name="LargeTrees" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Large Tree" parent="LargeTrees" instance=ExtResource("11_g6avu")]
 material = SubResource("ShaderMaterial_8cagq")
@@ -1093,6 +1151,7 @@ material = SubResource("ShaderMaterial_ulg1o")
 position = Vector2(616, 116)
 
 [node name="SmallTrees" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="SmallTree" parent="SmallTrees" instance=ExtResource("21_nnj4g")]
 material = SubResource("ShaderMaterial_u0fey")
@@ -1305,3 +1364,65 @@ position = Vector2(1064, 259)
 [node name="SmallTree53" parent="SmallTrees" instance=ExtResource("21_nnj4g")]
 material = SubResource("ShaderMaterial_rm7ah")
 position = Vector2(1096, 211)
+
+[node name="Rocks" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Rock" parent="Rocks" instance=ExtResource("22_v5err")]
+material = SubResource("ShaderMaterial_xofae")
+position = Vector2(487, 371)
+
+[node name="Rock2" parent="Rocks" instance=ExtResource("22_v5err")]
+material = SubResource("ShaderMaterial_yub1g")
+position = Vector2(929, 481)
+
+[node name="Rock3" parent="Rocks" instance=ExtResource("22_v5err")]
+material = SubResource("ShaderMaterial_d0pcc")
+position = Vector2(590, 270)
+
+[node name="Rock4" parent="Rocks" instance=ExtResource("22_v5err")]
+material = SubResource("ShaderMaterial_d8wrj")
+position = Vector2(609, 261)
+
+[node name="Rock5" parent="Rocks" instance=ExtResource("22_v5err")]
+material = SubResource("ShaderMaterial_xekli")
+position = Vector2(676, 355)
+
+[node name="Rock6" parent="Rocks" instance=ExtResource("22_v5err")]
+material = SubResource("ShaderMaterial_1jto1")
+position = Vector2(281, 578)
+
+[node name="Rock7" parent="Rocks" instance=ExtResource("22_v5err")]
+material = SubResource("ShaderMaterial_bre4e")
+position = Vector2(312, 632)
+
+[node name="Rock8" parent="Rocks" instance=ExtResource("22_v5err")]
+material = SubResource("ShaderMaterial_u2shn")
+position = Vector2(731, 640)
+
+[node name="Rock9" parent="Rocks" instance=ExtResource("22_v5err")]
+material = SubResource("ShaderMaterial_2xd4j")
+position = Vector2(678, 636)
+
+[node name="Rock10" parent="Rocks" instance=ExtResource("22_v5err")]
+material = SubResource("ShaderMaterial_7r15q")
+position = Vector2(791, 486)
+
+[node name="Rock11" parent="Rocks" instance=ExtResource("22_v5err")]
+material = SubResource("ShaderMaterial_h7ok2")
+position = Vector2(1048, 436)
+
+[node name="Rock12" parent="Rocks" instance=ExtResource("22_v5err")]
+material = SubResource("ShaderMaterial_cjnje")
+position = Vector2(1226, 478)
+
+[node name="Rock13" parent="Rocks" instance=ExtResource("22_v5err")]
+material = SubResource("ShaderMaterial_3okrs")
+position = Vector2(1255, 685)
+
+[node name="Rock14" parent="Rocks" instance=ExtResource("22_v5err")]
+material = SubResource("ShaderMaterial_sboc1")
+position = Vector2(1183, 400)
+
+[node name="SettingsGuide" parent="." instance=ExtResource("24_cqgt8")]
+position = Vector2(1045, 545)

@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dyi2jj0v7m8k3"]
+[gd_scene load_steps=12 format=3 uid="uid://dyi2jj0v7m8k3"]
 
 [ext_resource type="Shader" path="res://Scenes/objects/rocks/shake.gdshader" id="1_1537q"]
 [ext_resource type="Texture2D" uid="uid://c23bfd6mesaj8" path="res://Assets/objects/basic_grass_biome_things.png" id="1_30055"]
 [ext_resource type="PackedScene" uid="uid://ck01sv73lqfed" path="res://Scenes/components/hurt_component.tscn" id="2_kmjvf"]
 [ext_resource type="Script" path="res://Scenes/objects/rocks/rock.gd" id="2_pqvhv"]
 [ext_resource type="PackedScene" uid="uid://dh6xprwly08iu" path="res://Scenes/components/damage_component.tscn" id="4_7ldmp"]
+[ext_resource type="PackedScene" uid="uid://bqgf1gkrksv8x" path="res://Scenes/components/save_data_component.tscn" id="6_3vpgw"]
+[ext_resource type="Resource" uid="uid://n4fkq6c10via" path="res://Resources/rock_data_resource.tres" id="7_el4vs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jpohj"]
 resource_local_to_scene = true
@@ -23,6 +25,7 @@ radius = 5.0
 radius = 6.0
 
 [node name="Rock" type="Sprite2D"]
+y_sort_enabled = true
 material = SubResource("ShaderMaterial_jpohj")
 position = Vector2(0, -2)
 texture = SubResource("AtlasTexture_jjrc4")
@@ -41,3 +44,6 @@ shape = SubResource("CircleShape2D_8jxcq")
 
 [node name="DamageComponent" parent="." instance=ExtResource("4_7ldmp")]
 max_damage = 6
+
+[node name="SaveDataComponent" parent="." instance=ExtResource("6_3vpgw")]
+save_data_resource = ExtResource("7_el4vs")

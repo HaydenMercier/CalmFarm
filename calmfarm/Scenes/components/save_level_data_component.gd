@@ -34,26 +34,21 @@ func save_game() -> void:
 	
 	save_node_data()
 	
-	# Save to a temporary binary file first
 	var temp_path = save_game_data_path + "temp_save.res"
 	var result: int = ResourceSaver.save(game_data_resource, temp_path, ResourceSaver.FLAG_COMPRESS)
 	print("raw save result:", result)
 	
-	# Read the raw saved data
 	var file = FileAccess.open(temp_path, FileAccess.READ)
 	var raw_data = file.get_buffer(file.get_length())
 	file.close()
 	
-	# Encrypt the data
 	var encrypted_data = xor_data(raw_data, ENCRYPTION_KEY)
 	
-	# Write encrypted file
 	var final_path = save_game_data_path + level_save_file_name
 	var enc_file = FileAccess.open(final_path, FileAccess.WRITE)
 	enc_file.store_buffer(encrypted_data)
 	enc_file.close()
 	
-	# Clean up temp file
 	DirAccess.remove_absolute(temp_path)
 	
 	print("Encrypted save written to:", final_path)
@@ -77,24 +72,19 @@ func load_game() -> void:
 	if !FileAccess.file_exists(save_game_path):
 		return
 	
-	# Read encrypted data
 	var enc_file = FileAccess.open(save_game_path, FileAccess.READ)
 	var encrypted_data = enc_file.get_buffer(enc_file.get_length())
 	enc_file.close()
 	
-	# Decrypt
 	var decrypted_data = xor_data(encrypted_data, ENCRYPTION_KEY)
 	
-	# Write decrypted data to temp file
 	var temp_path = save_game_data_path + "temp_load.res"
 	var temp_file = FileAccess.open(temp_path, FileAccess.WRITE)
 	temp_file.store_buffer(decrypted_data)
 	temp_file.close()
 	
-	# Load resource from decrypted temp file
 	game_data_resource = ResourceLoader.load(temp_path)
 	
-	# Clean up temp file
 	DirAccess.remove_absolute(temp_path)
 	
 	if game_data_resource == null:
