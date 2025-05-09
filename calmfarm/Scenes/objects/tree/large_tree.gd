@@ -8,24 +8,19 @@ var log_scene = preload("res://Scenes/objects/tree/log.tscn")
 var is_chopped: bool = false
 
 func _ready() -> void:
-	save_data_component.save_data_resource = save_data_component.save_data_resource.duplicate()
+	if save_data_component.save_data_resource == null:
+		save_data_component.save_data_resource = preload("res://Resources/tree_data_resource.tres").duplicate()
 
 
 	hurt_component.hurt.connect(on_hurt)
 	damage_component.max_damage_reached.connect(on_max_damage_reached)
-
-	var data = save_data_component.save_data_resource as TreeDataResource
-	if data.is_chopped:
-		queue_free()
-
-
 
 func _get_serialized_data() -> Dictionary:
 	return {
 		"is_chopped": is_chopped
 	}
 
-func _load_serialized_data(data: Dictionary) -> void:
+func _apply_serialized_state(data: Dictionary) -> void:
 	is_chopped = data.get("is_chopped", false)
 	if is_chopped:
 		queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dl20usxc43b7h"]
+[gd_scene load_steps=56 format=3 uid="uid://dl20usxc43b7h"]
 
 [ext_resource type="Texture2D" uid="uid://b4k86tmbahdiq" path="res://Assets/characters/basic_character_actions.png" id="1_7plpr"]
 [ext_resource type="Script" path="res://Scenes/characters/player/player.gd" id="1_f2k18"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://Scenes/characters/player/tilling_state.gd" id="8_qfcio"]
 [ext_resource type="Script" path="res://Scenes/characters/player/watering_state.gd" id="9_3itq1"]
 [ext_resource type="PackedScene" uid="uid://2bxidr6m3ywb" path="res://Scenes/components/hit_component.tscn" id="10_n0gto"]
+[ext_resource type="PackedScene" uid="uid://bqgf1gkrksv8x" path="res://Scenes/components/save_data_component.tscn" id="11_gbl2y"]
+[ext_resource type="Resource" uid="uid://dixwiqj3vtn2x" path="res://Resources/player_data_resource.tres" id="12_005p0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ecef"]
 atlas = ExtResource("1_7plpr")
@@ -456,3 +458,6 @@ position = Vector2(0, 3)
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_mf64q")
 debug_color = Color(0.929278, 3.14775e-05, 0.661366, 0.42)
+
+[node name="SaveDataComponent" parent="." instance=ExtResource("11_gbl2y")]
+save_data_resource = ExtResource("12_005p0")

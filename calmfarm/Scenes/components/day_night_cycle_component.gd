@@ -36,6 +36,7 @@ func _ready() -> void:
 	DayAndNightCycleManager.game_time.connect(on_game_time)
 	GameDialogueManager.on.connect(on_on)
 	GameDialogueManager.off.connect(on_off)
+	Settings.day_night_component = self
 
 
 func on_game_time(time: float) -> void:

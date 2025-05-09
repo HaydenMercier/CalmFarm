@@ -23,3 +23,10 @@ func remove_collectable(collectable_name: String) -> void:
 			inventory[collectable_name] -= 1
 	
 	inventory_changed.emit()
+
+func get_inventory_state() -> Dictionary:
+	return inventory
+
+func set_inventory_state(state: Dictionary) -> void:
+	inventory = state
+	inventory_changed.emit()

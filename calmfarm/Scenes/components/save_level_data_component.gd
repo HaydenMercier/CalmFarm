@@ -24,7 +24,23 @@ func save_node_data() -> void:
 				var save_data_resource: NodeDataResource = node._save_data()
 				var save_final_resource = save_data_resource.duplicate()
 				game_data_resource.save_data_nodes.append(save_final_resource)
+	for node in get_tree().get_nodes_in_group("save_data_component"):
+		if node is SaveDataComponent:
+			var save_data_resource: NodeDataResource = node._save_data()
+			game_data_resource.save_data_nodes.append(save_data_resource.duplicate())
 
+# Save globals
+	if InventoryManager:
+		game_data_resource.inventory_data = InventoryManager.get_inventory_state()
+
+	if ToolManager:
+		game_data_resource.tool_data = ToolManager.get_enabled_tool_states()
+
+	if Settings:
+		game_data_resource.settings_data = Settings.get_settings_state()
+
+	if GameManager:
+		game_data_resource.player_data = {"position": GameManager.get_player_position()}
 
 func save_game() -> void:
 	if !DirAccess.dir_exists_absolute(save_game_data_path):
@@ -94,3 +110,14 @@ func load_game() -> void:
 	for resource in game_data_resource.save_data_nodes:
 		if resource is NodeDataResource:
 			resource._load_data(root_node)
+	if InventoryManager:
+		InventoryManager.set_inventory_state(game_data_resource.inventory_data)
+
+	if ToolManager:
+		ToolManager.set_enabled_tool_states(game_data_resource.tool_data)
+
+	if Settings:
+		Settings.set_settings_state(game_data_resource.settings_data)
+
+	if GameManager:
+		GameManager.set_player_position(game_data_resource.player_data.get("position", Vector2.ZERO))

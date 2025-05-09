@@ -30,6 +30,7 @@ GameDialogueManager="*res://Scripts/globals/game_dialogue_manager.gd"
 GameManager="*res://Scripts/globals/game_manager.gd"
 SceneManager="*res://Scripts/globals/scene_manager.gd"
 AudioManager="*res://audio/AudioManager.gd"
+Settings="*res://Scripts/globals/settings.gd"
 
 [display]
 

@@ -8,22 +8,17 @@ var stone_scene = preload("res://Scenes/objects/rocks/stone.tscn")
 var is_mined: bool = false
 
 func _ready() -> void:
-	save_data_component.save_data_resource = save_data_component.save_data_resource.duplicate()
+	if save_data_component.save_data_resource == null:
+		save_data_component.save_data_resource = preload("res://Resources/rock_data_resource.tres").duplicate()
 	hurt_component.hurt.connect(on_hurt)
 	damage_component.max_damage_reached.connect(on_max_damage_reached)
-
-	var data = save_data_component.save_data_resource as RockDataResource
-	if data.is_mined:
-		queue_free()
-
-
 
 func _get_serialized_data() -> Dictionary:
 	return {
 		"is_mined": is_mined
 	}
 
-func _load_serialized_data(data: Dictionary) -> void:
+func _apply_serialized_state(data: Dictionary) -> void:
 	is_mined = data.get("is_mined", false)
 	if is_mined:
 		queue_free()

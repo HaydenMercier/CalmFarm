@@ -27,4 +27,7 @@ position = Vector2(989, 541)
 
 [node name="Camera2D" type="Camera2D" parent="GameRoot/Player"]
 
+[node name="PlayerSpawn" type="Node2D" parent="GameRoot"]
+position = Vector2(500, 250)
+
 [node name="GameScreen" parent="." instance=ExtResource("2_t7kch")]
