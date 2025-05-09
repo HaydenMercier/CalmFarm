@@ -16,12 +16,9 @@ func action_feed_animals() -> void:
 
 func action_mute() -> void:
 	mute.emit()
-
+	
 func action_normal() -> void:
 	normal.emit()
-
-func action_quiet() -> void:
-	quiet.emit()
 
 func action_off() -> void:
 	off.emit()

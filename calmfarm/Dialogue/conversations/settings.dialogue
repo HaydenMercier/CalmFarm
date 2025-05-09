@@ -7,9 +7,6 @@ Settings: What would you like to do.
 	- Normal
 		Teemo: Normal, please.
 		do GameDialogueManager.action_normal()
-	- Quiet
-		Teemo: Quiet, please.
-		do GameDialogueManager.action_quiet()
 	- Mute
 		Teemo: Mute, please.
 		do GameDialogueManager.action_mute()
