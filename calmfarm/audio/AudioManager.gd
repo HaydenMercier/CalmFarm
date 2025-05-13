@@ -1,20 +1,18 @@
 extends Node
 
-const bus_name = "Master"
-var index = AudioServer.get_bus_index(bus_name)
+const BUS_NAME: String = "Master"
+var index: int = AudioServer.get_bus_index(BUS_NAME)
+
 
 func _ready() -> void:
 	GameDialogueManager.mute.connect(on_mute)
 	GameDialogueManager.normal.connect(on_normal)
-	Settings.audio_node = self
 	Settings.set_master_volume(0.0)
-
-func get_bus_index(bus_name: String) -> int:
-	return AudioServer.get_bus_index(bus_name)
 
 
 func on_mute() -> void:
-	AudioServer.set_bus_volume_db(index, -80)
+	Settings.set_master_volume(-80.0)
+
 
 func on_normal() -> void:
-	AudioServer.set_bus_volume_db(index, 0)
+	Settings.set_master_volume(0.0)

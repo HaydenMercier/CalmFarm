@@ -1,7 +1,6 @@
 class_name DayNightCycleComponent
 extends CanvasModulate
 
-
 func on_off():
 	self.visible = false
 
@@ -36,8 +35,8 @@ func _ready() -> void:
 	DayAndNightCycleManager.game_time.connect(on_game_time)
 	GameDialogueManager.on.connect(on_on)
 	GameDialogueManager.off.connect(on_off)
-	Settings.day_night_component = self
-
+	Settings.day_night_overlay = get_path()
+	Settings.set_day_night_enabled(true)
 
 func on_game_time(time: float) -> void:
 	var sample_value = 0.5 * (sin(time - PI * 0.5) + 1.0)

@@ -47,3 +47,10 @@ func recalculate_time() -> void:
 	if current_day != day:
 		current_day = day
 		time_tick_day.emit(day)
+
+func get_time_state() -> Dictionary:
+	return { "time": time }
+
+func set_time_state(state: Dictionary) -> void:
+	time = state.get("time", 0.0)
+	recalculate_time()

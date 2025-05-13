@@ -21,30 +21,27 @@ func _get_serialized_data() -> Dictionary:
 func _apply_serialized_state(data: Dictionary) -> void:
 	is_mined = data.get("is_mined", false)
 	if is_mined:
-		queue_free()
-
+		hide()
+		$StaticBody2D/CollisionShape2D.disabled = true
 
 func on_hurt(hit_damage: int) -> void:
-	if is_mined: return
-
+	if is_mined:
+		return
 	damage_component.apply_damage(hit_damage)
 	material.set_shader_parameter("shake_intensity", 0.15)
 	await get_tree().create_timer(0.5).timeout
 	material.set_shader_parameter("shake_intensity", 0.0)
 
 func on_max_damage_reached() -> void:
-	if is_mined: return
-
+	if is_mined:
+		return
 	is_mined = true
 	var data = save_data_component.save_data_resource as RockDataResource
 	data.is_mined = true
-
-
 	await get_tree().create_timer(0.5).timeout
 	call_deferred("add_stone_scene")
 	hide()
 	$StaticBody2D/CollisionShape2D.disabled = true
-
 
 func add_stone_scene() -> void:
 	var stone_instance = stone_scene.instantiate()

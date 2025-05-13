@@ -3,7 +3,6 @@ extends NodeDataResource
 
 @export var is_mined: bool = false
 
-
 func _save_data(node: Node2D) -> void:
 	super._save_data(node)
 	is_mined = node._get_serialized_data().get("is_mined", false)

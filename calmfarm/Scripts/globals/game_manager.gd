@@ -13,11 +13,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func start_game() -> void:
 	SceneManager.load_main_scene_container()
 	SceneManager.load_level("Level1") 
-
-	await get_tree().process_frame  # Wait for level to load
-	await get_tree().process_frame  # Wait again to ensure player is in tree
-
-	player = get_tree().get_first_node_in_group("player")  # Refresh player reference
+	await get_tree().process_frame
+	await get_tree().process_frame
+	player = get_tree().get_first_node_in_group("player")
 
 	var save_path = "user://game_data/save_Level1_game_data.res"
 	if FileAccess.file_exists(save_path):

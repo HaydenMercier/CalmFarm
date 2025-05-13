@@ -10,10 +10,10 @@ func _save_data(node: Node2D) -> void:
 	node_name = node.name
 	scene_file_path = node.scene_file_path
 	parent_node_path = node.get_parent().get_path()
-	position = node.global_position  # Save this as 'position'
+	position = node.global_position
 
 func _load_data(window: Window) -> void:
-	super._load_data(window)  # Sets node_path, position, etc.
+	super._load_data(window)
 
 	spawned_node = null
 	var parent_node: Node2D = null
@@ -29,5 +29,5 @@ func _load_data(window: Window) -> void:
 		spawned_node = scene_file_resource.instantiate() as Node2D
 
 	if parent_node != null and spawned_node != null:
-		spawned_node.global_position = position  # ✅ Use saved position here
+		spawned_node.global_position = position
 		parent_node.add_child(spawned_node)

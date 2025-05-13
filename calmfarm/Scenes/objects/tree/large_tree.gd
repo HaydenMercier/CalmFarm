@@ -23,8 +23,8 @@ func _get_serialized_data() -> Dictionary:
 func _apply_serialized_state(data: Dictionary) -> void:
 	is_chopped = data.get("is_chopped", false)
 	if is_chopped:
-		queue_free()
-
+		hide()
+		$StaticBody2D/CollisionShape2D.disabled = true
 
 func on_hurt(hit_damage: int) -> void:
 	if is_chopped: return

@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_t7rpq")
 is_chopped = false
-global_position = Vector2(0, 0)
+position = Vector2(0, 0)
 node_path = NodePath("..")
 parent_node_path = NodePath("")
