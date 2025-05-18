@@ -1,0 +1,272 @@
+classDiagram
+	class Code_edit
+	class Download_update_panel
+	class Editor_property_control
+	Editor_property_control: +build_menu()
+	Editor_property_control <|-- Resource_button
+	Editor_property_control <|-- Files_list
+	class Resource_button
+	class Errors_panel
+	Errors_panel: +apply_theme()
+	Errors_panel: +show_error_for_line_number()
+	Errors_panel: +show_error()
+	class Files_list
+	Files_list: +focus_filter()
+	Files_list: +select_file()
+	Files_list: +mark_file_as_unsaved()
+	Files_list: +update_file_map()
+	Files_list: +get_nice_file()
+	Files_list: +apply_filter()
+	Files_list: +apply_theme()
+	class Find_in_files
+	Find_in_files: +prepare()
+	Find_in_files: +update_results_view()
+	Find_in_files: +find_in_files()
+	Find_in_files: +get_selection_key()
+	Find_in_files: +find_in_line()
+	Find_in_files: +replace_results()
+	class Search_and_replace
+	Search_and_replace: +focus_line_edit()
+	Search_and_replace: +apply_theme()
+	Search_and_replace: +search()
+	Search_and_replace: +find_in_line()
+	class Title_list
+	Title_list: +select_title()
+	Title_list: +apply_filter()
+	Title_list: +apply_theme()
+	class Update_button
+	Update_button: +version_to_number()
+	Update_button: +apply_theme()
+	Update_button: +check_for_update()
+	Update_button <|-- Download_update_panel
+	class Dialogue_label
+	Dialogue_label: +type_out()
+	Dialogue_label: +skip_typing()
+	class Example_balloon
+	Example_balloon: +start()
+	Example_balloon: +next()
+	Example_balloon <|-- Dialogue_label
+	class Small_example_balloon
+	Small_example_balloon: +start()
+	Small_example_balloon: +next()
+	Small_example_balloon <|-- Dialogue_label
+	class Test_scene
+	class Main_view
+	Main_view: +apply_changes()
+	Main_view: +load_from_version_refresh()
+	Main_view: +new_file()
+	Main_view: +open_resource()
+	Main_view: +open_file()
+	Main_view: +show_file_in_filesystem()
+	Main_view: +save_files()
+	Main_view: +save_file()
+	Main_view: +close_file()
+	Main_view: +remove_file_from_open_buffers()
+	Main_view: +apply_theme()
+	Main_view: +build_open_menu()
+	Main_view: +get_last_export_path()
+	Main_view: +parse()
+	Main_view: +show_build_error_dialog()
+	Main_view: +generate_translations_keys()
+	Main_view: +add_path_to_project_translations()
+	Main_view: +export_translations_to_csv()
+	Main_view: +export_character_names_to_csv()
+	Main_view: +import_translations_from_csv()
+	Main_view: +show_search_form()
+	Main_view <|-- Code_edit
+	Main_view <|-- Files_list
+	Main_view <|-- Title_list
+	Main_view <|-- Update_button
+	Main_view <|-- Search_and_replace
+	Main_view <|-- Errors_panel
+	Main_view <|-- Settings_view
+	Main_view <|-- Find_in_files
+	class Settings_view
+	Settings_view: +prepare()
+	Settings_view: +apply_settings_changes()
+	class On_the_farm_music
+	class Chicken_cluck_1_sfx
+	class Chicken_cluck_2_sfx
+	class Chicken_cluck_3_sfx
+	class Chicken_cluck_multiple_sfx
+	class Cow_moo
+	class Game_dialogue_balloon
+	Game_dialogue_balloon: +start()
+	Game_dialogue_balloon: +next()
+	Game_dialogue_balloon <|-- Dialogue_label
+	Game_dialogue_balloon <|-- Emotes_panel
+	class Chicken
+	Chicken <|-- Audio_play_time_component
+	Chicken <|-- Chicken_cluck_multiple_sfx
+	class Cow
+	Cow <|-- Cow_moo
+	Cow <|-- Audio_play_time_component
+	class Guide
+	Guide: +on_interactable_activated()
+	Guide: +on_interactable_deactivated()
+	Guide: +on_give_crop_seeds()
+	Guide <|-- Interactable_component
+	Guide <|-- Interactable_label_component
+	class Settings
+	Settings: +on_interactable_activated()
+	Settings: +on_interactable_deactivated()
+	Settings <|-- Interactable_component
+	Settings <|-- Interactable_label_component
+	class Player
+	Player: +on_tool_selected()
+	Player: +get_player_position()
+	Player: +set_player_position()
+	Player <|-- Hit_component
+	Player <|-- Save_data_component
+	class Audio_play_time_component
+	class Collectable_component
+	class Crops_cursor_component
+	class Damage_component
+	Damage_component: +apply_damage()
+	class Day_night_cycle_component
+	Day_night_cycle_component: +on_off()
+	Day_night_cycle_component: +on_on()
+	Day_night_cycle_component: +on_game_time()
+	class Feed_component
+	class Field_cursor_component
+	class Growth_cycle_component
+	Growth_cycle_component: +on_time_tick_day()
+	Growth_cycle_component: +growth_states()
+	Growth_cycle_component: +harvest_state()
+	Growth_cycle_component: +get_current_growth_state()
+	class Hit_component
+	class Hurt_component
+	class Interactable_component
+	class Interactable_label_component
+	class Mouse_cursor_component
+	class Save_data_component
+	Save_data_component: +get_serialized_data()
+	Save_data_component: +load_serialized_data()
+	Save_data_component: +apply_loaded_data()
+	class Save_level_data_component
+	class Test_scene_save_data_manager_component
+	Test_scene_save_data_manager_component: +load_test_scene()
+	class Door
+	Door: +on_interactable_activated()
+	Door: +on_interactable_deactivated()
+	Door <|-- Interactable_component
+	class Large_house
+	class Small_house
+	class Storeroom
+	class Level_1
+	Level_1 <|-- On_the_farm_music
+	Level_1 <|-- Save_level_data_component
+	Level_1: +save_node_data()
+	Level_1: +save_game()
+	Level_1: +xor_data()
+	Level_1: +load_game()
+	Level_1 <|-- Chicken
+	Level_1 <|-- Field_cursor_component
+	Level_1 <|-- Cow
+	Level_1 <|-- Crops_cursor_component
+	Level_1 <|-- Guide
+	Level_1 <|-- Save_data_component
+	Level_1 <|-- Chest
+	Level_1 <|-- Milk
+	Level_1 <|-- Large_tree
+	Level_1 <|-- Egg
+	Level_1 <|-- Small_tree
+	Level_1 <|-- Rock
+	Level_1 <|-- Settings
+	class Walls
+	class Main_scene
+	Main_scene <|-- Day_night_cycle_component
+	Main_scene <|-- Mouse_cursor_component
+	Main_scene <|-- Game_screen
+	Main_scene <|-- Player
+	Main_scene <|-- Level_1
+	class Chest
+	Chest: +on_interactable_activated()
+	Chest: +on_interactable_deactivated()
+	Chest: +on_feed_the_animals()
+	Chest: +trigger_feed_harvest()
+	Chest: +on_food_received()
+	Chest: +add_reward_scene()
+	Chest: +get_random_position_in_circle()
+	Chest <|-- Interactable_component
+	Chest <|-- Interactable_label_component
+	Chest <|-- Feed_component
+	class Corn
+	Corn <|-- Collectable_component
+	class Egg
+	Egg <|-- Collectable_component
+	class Milk
+	Milk <|-- Collectable_component
+	class Corn
+	Corn: +on_hurt()
+	Corn: +on_crop_maturity()
+	Corn: +on_crop_harvesting()
+	Corn <|-- Hurt_component
+	Corn <|-- Watering_particles
+	Corn <|-- Flowering_particles
+	Corn <|-- Growth_cycle_component
+	Corn <|-- Save_data_component
+	class Flowering_particles
+	class Tomato
+	Tomato: +on_hurt()
+	Tomato: +on_crop_maturity()
+	Tomato: +on_crop_harvesting()
+	Tomato <|-- Watering_particles
+	Tomato <|-- Flowering_particles
+	Tomato <|-- Hurt_component
+	Tomato <|-- Growth_cycle_component
+	Tomato <|-- Save_data_component
+	class Watering_particles
+	class Rock
+	Rock <|-- Hurt_component
+	Rock: +on_hurt()
+	Rock: +on_max_damage_reached()
+	Rock: +add_stone_scene()
+	Rock <|-- Damage_component
+	Rock <|-- Save_data_component
+	class Stone
+	Stone <|-- Collectable_component
+	class Tomato
+	Tomato <|-- Collectable_component
+	class Large_tree
+	Large_tree <|-- Hurt_component
+	Large_tree: +on_hurt()
+	Large_tree: +on_max_damage_reached()
+	Large_tree: +add_log_scene()
+	Large_tree <|-- Damage_component
+	Large_tree <|-- Save_data_component
+	class Log
+	Log <|-- Collectable_component
+	class Small_tree
+	Small_tree <|-- Hurt_component
+	Small_tree: +on_hurt()
+	Small_tree: +on_max_damage_reached()
+	Small_tree: +add_log_scene()
+	Small_tree <|-- Damage_component
+	Small_tree <|-- Save_data_component
+	class Corn
+	class Tomato
+	class Day_and_night_panel
+	Day_and_night_panel: +on_time_tick()
+	class Emotes_panel
+	Emotes_panel: +play_emote()
+	Emotes_panel: +on_inventory_changed()
+	Emotes_panel: +on_feed_the_animals()
+	class Game_menu_screen
+	Game_menu_screen <|-- Game_menu_screen_background
+	Game_menu_screen <|-- Mouse_cursor_component
+	class Game_menu_screen_background
+	Game_menu_screen_background: +set_scene_process_mode()
+	Game_menu_screen_background <|-- Player
+	Game_menu_screen_background <|-- Guide
+	Game_menu_screen_background <|-- Cow
+	Game_menu_screen_background <|-- Chicken
+	class Game_screen
+	Game_screen <|-- Tool_panel
+	Game_screen <|-- Inventory_panel
+	Game_screen <|-- Day_and_night_panel
+	Game_screen <|-- Emotes_panel
+	class Inventory_panel
+	Inventory_panel: +on_inventory_changed()
+	class Tool_panel
+	Tool_panel: +on_enable_tool_button()

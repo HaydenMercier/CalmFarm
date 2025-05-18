@@ -24,7 +24,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	growth_state = growth_cycle_component.get_current_growth_state()
 	sprite_2d.frame = growth_state + start_tomato_frame_offset
-	
 	if growth_state == DataTypes.GrowthStates.Maturity:
 		flowering_particles.emitting = true
 

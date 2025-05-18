@@ -9,7 +9,7 @@ extends Control
 
 func _ready() -> void:
 	DayAndNightCycleManager.time_tick.connect(on_time_tick)
-
+	self.mouse_filter = Control.MOUSE_FILTER_STOP
 
 func on_time_tick(day: int, hour: int, minute: int) -> void:
 	day_label.text = "Day " + str(day)

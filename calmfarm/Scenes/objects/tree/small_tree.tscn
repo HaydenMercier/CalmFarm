@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnpfv1nu3hcd5"]
+[gd_scene load_steps=13 format=3 uid="uid://cnpfv1nu3hcd5"]
 
 [ext_resource type="Shader" path="res://Scenes/objects/tree/shake.gdshader" id="1_ax06j"]
 [ext_resource type="Texture2D" uid="uid://c23bfd6mesaj8" path="res://Assets/objects/basic_grass_biome_things.png" id="1_jm6iw"]
@@ -23,6 +23,9 @@ radius = 4.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uydm5"]
 size = Vector2(8, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkq45"]
+size = Vector2(12.5, 30)
 
 [node name="SmallTree" type="Sprite2D"]
 material = SubResource("ShaderMaterial_lbuaf")
@@ -50,3 +53,9 @@ max_damage = 3
 
 [node name="SaveDataComponent" parent="." instance=ExtResource("6_w2dfl")]
 save_data_resource = ExtResource("7_5iv84")
+
+[node name="AreaBlocker" type="Area2D" parent="." groups=["till_blocker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBlocker"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_gkq45")

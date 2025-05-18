@@ -25,7 +25,7 @@ func set_master_volume(db: float) -> void:
 	if _audio_bus_idx != -1:
 		AudioServer.set_bus_volume_db(_audio_bus_idx, master_volume_db)
 	else:
-		push_warning("Audio bus '%s' not found; volume unchanged." % audio_bus_name)
+		push_warning("Audio bus '%s' not found; " % audio_bus_name)
 
 func set_day_night_enabled(enabled: bool) -> void:
 	day_night_enabled = enabled
@@ -35,7 +35,7 @@ func _apply_overlay_visibility() -> void:
 	if _overlay:
 		_overlay.visible = day_night_enabled
 	else:
-		push_warning("No CanvasItem set for day_night_overlay; toggle ignored.")
+		push_warning("No CanvasItem set; toggle ignored.")
 
 func _resolve_overlay(path: NodePath) -> CanvasItem:
 	var node := get_node_or_null(path)

@@ -11,7 +11,7 @@ func _ready() -> void:
 	
 	InventoryManager.inventory_changed.connect(on_inventory_changed)
 	GameDialogueManager.feed_the_animals.connect(on_feed_the_animals)
-
+	self.mouse_filter = Control.MOUSE_FILTER_STOP
 
 func play_emote(animation: String) -> void:
 	animated_sprite_2d.play(animation)

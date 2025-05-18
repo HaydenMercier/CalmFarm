@@ -16,7 +16,6 @@ func start_game() -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
 	player = get_tree().get_first_node_in_group("player")
-
 	var save_path = "user://game_data/save_Level1_game_data.res"
 	if FileAccess.file_exists(save_path):
 		SaveGameManager.load_game()

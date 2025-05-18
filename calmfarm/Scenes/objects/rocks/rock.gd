@@ -23,6 +23,7 @@ func _apply_serialized_state(data: Dictionary) -> void:
 	if is_mined:
 		hide()
 		$StaticBody2D/CollisionShape2D.disabled = true
+		$AreaBlocker.disabled = true
 
 func on_hurt(hit_damage: int) -> void:
 	if is_mined:
@@ -42,6 +43,8 @@ func on_max_damage_reached() -> void:
 	call_deferred("add_stone_scene")
 	hide()
 	$StaticBody2D/CollisionShape2D.disabled = true
+	$AreaBlocker.disabled = true
+
 
 func add_stone_scene() -> void:
 	var stone_instance = stone_scene.instantiate()

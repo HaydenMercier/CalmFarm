@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3imhcwwusvef"]
+[gd_scene load_steps=2 format=3 uid="uid://dl4wniye3e6qa"]
 
-[ext_resource type="Script" path="res://Scenes/components/test_scene_save_data_manager_component.gd" id="1_cthe5"]
+[sub_resource type="GDScript" id="GDScript_61hvs"]
+script/source = "class_name TestSceneSaveDataManagerComponent
+extends Node
+
+
+func _ready() -> void:
+	call_deferred(\"load_test_scene\")
+
+
+func load_test_scene():
+	SaveGameManager.load_game()
+"
 
 [node name="TestSceneSaveDataManagerComponent" type="Node"]
-script = ExtResource("1_cthe5")
+script = SubResource("GDScript_61hvs")

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=4 uid="uid://brlsl5ydejkap"]
+[gd_scene load_steps=3 format=4 uid="uid://brlsl5ydejkap"]
 
 [ext_resource type="TileSet" uid="uid://b3mgm44y8f7wy" path="res://Tilesets/house_set.tres" id="1_fdqe5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23bam"]
+size = Vector2(123.25, 113)
 
 [node name="StoreRoom" type="Node2D"]
 
@@ -17,3 +20,9 @@ tile_set = ExtResource("1_fdqe5")
 [node name="Furniture" type="TileMapLayer" parent="HouseTileMap"]
 tile_map_data = PackedByteArray("AAABAPr/AQADAAIAAAABAPz/AQADAAIAAAACAPr/AQADAAIAAAADAPr/AQADAAIAAAAEAPr/AQADAAIAAAAFAPr/AQADAAIAAAAGAPr/AQADAAIAAAAHAPr/AQADAAIAAAACAPz/AQADAAIAAAADAPz/AQADAAIAAAAFAPz/AQADAAIAAAAGAPz/AQADAAIAAAAHAPz/AQADAAIAAAACAPv/AQADAAUAAAAEAPv/AQADAAUAAAAGAPv/AQADAAUAAAACAP3/AQAHAAUAAAAGAP3/AQAFAAUAAAAEAP7/AQAAAAUAAAA=")
 tile_set = ExtResource("1_fdqe5")
+
+[node name="AreaBlocker" type="Area2D" parent="." groups=["till_blocker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBlocker"]
+position = Vector2(71.375, -56.5)
+shape = SubResource("RectangleShape2D_23bam")

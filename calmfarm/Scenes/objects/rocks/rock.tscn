@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dyi2jj0v7m8k3"]
+[gd_scene load_steps=13 format=3 uid="uid://dyi2jj0v7m8k3"]
 
 [ext_resource type="Shader" path="res://Scenes/objects/rocks/shake.gdshader" id="1_1537q"]
 [ext_resource type="Texture2D" uid="uid://c23bfd6mesaj8" path="res://Assets/objects/basic_grass_biome_things.png" id="1_30055"]
@@ -24,6 +24,9 @@ radius = 5.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_8jxcq"]
 radius = 6.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryuer"]
+size = Vector2(12.5, 13)
+
 [node name="Rock" type="Sprite2D"]
 y_sort_enabled = true
 material = SubResource("ShaderMaterial_jpohj")
@@ -47,3 +50,8 @@ max_damage = 6
 
 [node name="SaveDataComponent" parent="." instance=ExtResource("6_3vpgw")]
 save_data_resource = ExtResource("7_el4vs")
+
+[node name="AreaBlocker" type="Area2D" parent="." groups=["till_blocker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBlocker"]
+shape = SubResource("RectangleShape2D_ryuer")

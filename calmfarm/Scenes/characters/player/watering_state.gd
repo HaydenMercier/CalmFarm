@@ -23,6 +23,7 @@ func _on_next_transitions() -> void:
 
 
 func _on_enter() -> void:
+	hit_component_collision_shape.scale = Vector2(3, 3)
 	if player.player_direction == Vector2.UP:
 		animated_sprite_2d.play("watering_back")
 		hit_component_collision_shape.position = Vector2(0, -18)
@@ -42,5 +43,6 @@ func _on_enter() -> void:
 	hit_component_collision_shape.disabled = false
 
 func _on_exit() -> void:
+	hit_component_collision_shape.scale = Vector2(1, 1)
 	animated_sprite_2d.stop()
 	hit_component_collision_shape.disabled = true

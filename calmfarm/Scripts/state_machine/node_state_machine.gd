@@ -12,11 +12,10 @@ var parent_node_name: String
 func _ready() -> void:
 	parent_node_name = get_parent().name
 	
-	for child in get_children():
-		if child is NodeState:
-			node_states[child.name.to_lower()] = child
-			child.transition.connect(transition_to)
-	
+	for child: NodeState in get_children():
+		node_states[child.name.to_lower()] = child
+		child.transition.connect(transition_to)
+
 	if initial_node_state:
 		initial_node_state._on_enter()
 		current_node_state = initial_node_state
